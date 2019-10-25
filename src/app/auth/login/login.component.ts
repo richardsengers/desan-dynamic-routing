@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Customer} from '../../shared/models/customer';
+import {WhoamiService} from '../../core/whoami.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  customer: Customer;
+  constructor(private route: ActivatedRoute, private whoamiService: WhoamiService) {
+    this.customer = whoamiService.whoami;
+  }
 
   ngOnInit() {
+    console.log(this.customer);
   }
 
 }

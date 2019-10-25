@@ -5,6 +5,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {BaseComponent} from './base/base.component';
 import {RoutingService} from './core/routing.service';
 import {DesanLoginComponent} from './auth/desan-login/desan-login.component';
+import {WhoamiService} from './core/whoami.service';
 
 
 const routes: Routes = [
@@ -17,6 +18,9 @@ const routes: Routes = [
     path: ':test1/:test2',
     component: BaseComponent,
     canActivate: [RoutingService],
+    resolve: {
+      whoami: WhoamiService
+    },
     children: [{
       canActivateChild: [AuthGuard],
       path: 'enquete',

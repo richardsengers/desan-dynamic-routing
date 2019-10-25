@@ -6,12 +6,12 @@ import {Survey} from '../shared/models/survey';
 @Injectable({
   providedIn: 'root'
 })
-export class EnqueteService implements Resolve<boolean> {
+export class EnqueteService implements Resolve<Survey> {
 
   constructor() {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Survey> {
     return new Observable(observer => {
       const survey = new Survey({
         id: 1,
