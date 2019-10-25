@@ -1,27 +1,22 @@
-# DynamicRouting
+# DynamicRouting for survey
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
+To start run ``npm install`` when finished run ``npm start``
 
-## Development server
+Your server will be available at ``localhost:4200``
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Routing
+We need at least 2 layers of routing to get customer surveys.
+For example ``/hbo/2019`` 
+The first routing will be the customer, the second routing will be the version oid.
+So when you start ``localhost:4200`` you will get a 404 page
 
-## Code scaffolding
+``localhost:4200/hbo/2019`` will be the root of your project. This way we can theme our app based on the customer.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+We can now show a login page when not logged in ``localhost:4200/hbo/2019`` or ``localhost:4200/hbo/2019?auth=0``
+Or we can show a survey view ``localhost:4200/hbo/2019?auth=1``
 
-## Build
+Offcourse this is only for testing purpose.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Desan general stuff
+We can even serve our own stuff. for example ``localhost:4200/404`` or ``localhost:4200/login``
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
